@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Minesweeper</title>
+    <link rel="icon" href="./images/mine.png" type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="js/minesweeper.js"></script>
+
+</head>
+
+<body style="margin: 0 0 0 0;">
+    <div style="width: 100%; height: 50px; background-color: #00000099;box-shadow: 0px 5px 5px black;display: flex;justify-content: center;align-items: center;margin-bottom: 2em;" id="topbar">
+        <a href="https://rsninja.dev/" style="position:absolute;left:0;height: 50px;">
+            <img src="https://rsninja.dev/assets/home.png" alt="home" style="height: 50px;image-rendering: pixelated;image-rendering: crisp-edges;">
+        </a>
+        <img src="https://rsninja.dev/assets/logo.png" alt="rsninja dev" style="position:absolute;right:0;left:0;margin:auto;height: 50px;image-rendering: pixelated;image-rendering: crisp-edges;">
+    </div>
+
+    <div id="blackBorder">
+        <div id="title">
+            <span>Minesweeper</span>
+        </div>
+        <div id="whiteBar">
+            <select id="difficulty" onchange="setDifficulty();">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="endless">Endless</option>
+                <option value="dense">Dense</option>
+            </select>
+        </div>
+        <div id="borderOut">
+            <div id="borderMid">
+                <div id="borderIn">
+                    <span id="flagCount" class="redText">000</span>
+                    <div id="smiley" class="smiley" onmousedown="smileyDown();" onmouseup="smileyUp();" onclick="startGame();"></div>
+                    <span id="timer" class="redText">000</span>
+                    <div id="seperator"></div>
+                    <div id="minefield" style="width: 200px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="winMsg" style="display: none;">
+        <p>Congratulations, you win!</p>
+        <p id="finalTime"></p>
+        <button onclick="closeWinMsg()">Nice!</button>
+    </div>
+
+    <div id="loseMsg" style="display: none;">
+        <p>You Lost, click the</p>
+        <p>smile to try again</p>
+        <button onclick="closeLoseMsg()">Continue</button>
+    </div>
+</body>
+
+</html>
